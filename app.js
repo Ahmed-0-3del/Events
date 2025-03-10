@@ -6,6 +6,7 @@ const session = require('express-session')
 const flash = require('connect-flash')
 const passport = require('passport')
 const passportSetup = require('./config/passport-setup')
+const PORT = process.env.PORT || 3000;
 // bring ejs template
 
 app.set('view engine', 'ejs')
@@ -52,7 +53,6 @@ const users = require('./routes/user-routes')
 app.use('/users', users)
 // listen to port 3000
 
-app.listen(3000, ()=> {
-
-    console.log(' app is wokring on port 3000')
-})
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
